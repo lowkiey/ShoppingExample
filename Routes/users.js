@@ -106,6 +106,10 @@ router.get("/checkout/:id", async (req, res) => {
       (total, product) => total + product.price,
       0
     );
+   await userModel.findByIdAndUpdate(req.params.id,{shoppingCart:[]}, {
+      new: true,
+    });
+    console.log(total);
     return res.status(200).json(total);
   } catch (error) {
     return res.status(500).json({ message: error.message });
