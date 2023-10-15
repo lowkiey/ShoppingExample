@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const productSchema = require('./productModel').Schema;
+// or const {productSChema}=require('./productModel')
 const schemaOptions = {
   strict: false,
   timestamps: true,
